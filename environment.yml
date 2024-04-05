@@ -1,0 +1,40 @@
+name: PJA-ASI-14C-GR1
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - bzip2=1.0.8=hcfcfb64_5
+  - ca-certificates=2024.2.2=h56e8100_0
+  - intel-openmp=2024.1.0=h57928b3_964
+  - libblas=3.9.0=21_win64_mkl
+  - libcblas=3.9.0=21_win64_mkl
+  - libffi=3.4.2=h8ffe710_5
+  - libhwloc=2.9.3=default_haede6df_1009
+  - libiconv=1.17=hcfcfb64_2
+  - liblapack=3.9.0=21_win64_mkl
+  - libsqlite=3.45.2=hcfcfb64_0
+  - libxml2=2.12.6=hc3477c8_1
+  - libzlib=1.2.13=hcfcfb64_5
+  - mkl=2024.0.0=h66d3029_49657
+  - numpy=1.26.4=py310hf667824_0
+  - openssl=3.2.1=hcfcfb64_1
+  - pandas=2.2.1=py310hecd3228_0
+  - pip=24.0=pyhd8ed1ab_0
+  - pthreads-win32=2.9.1=hfa6e2cd_3
+  - python=3.10.14=h4de0772_0_cpython
+  - python-dateutil=2.9.0=pyhd8ed1ab_0
+  - python-tzdata=2024.1=pyhd8ed1ab_0
+  - python_abi=3.10=4_cp310
+  - pytz=2024.1=pyhd8ed1ab_0
+  - setuptools=69.2.0=pyhd8ed1ab_0
+  - six=1.16.0=pyh6c4a22f_0
+  - tbb=2021.11.0=h91493d7_1
+  - tk=8.6.13=h5226925_1
+  - tzdata=2024a=h0c530f3_0
+  - ucrt=10.0.22621.0=h57928b3_0
+  - vc=14.3=hcf57466_18
+  - vc14_runtime=14.38.33130=h82b7239_18
+  - vs2015_runtime=14.38.33130=hcb4865c_18
+  - wheel=0.43.0=pyhd8ed1ab_1
+  - xz=5.2.6=h8d14728_0
+prefix: ${CONDA_ENV_PATH}
