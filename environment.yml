@@ -37,5 +37,4 @@ dependencies:
   - vs2015_runtime=14.38.33130=hcb4865c_18
   - wheel=0.43.0=pyhd8ed1ab_1
   - xz=5.2.6=h8d14728_0
-#prefix: ${CONDA_ENV_PATH}
-prefix: /opt/homebrew/anaconda3/bin/python
+prefix: ${CONDA_ENV_PATH}
