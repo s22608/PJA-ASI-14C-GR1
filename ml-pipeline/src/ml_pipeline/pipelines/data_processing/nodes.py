@@ -17,18 +17,19 @@ def _parse_money(x: pd.Series) -> pd.Series:
     return x
 
 
-# def preprocess_companies(companies: pd.DataFrame) -> pd.DataFrame:
-#     """Preprocesses the data for companies.
+def preprocess_aug_train(aug_train: pd.DataFrame) -> pd.DataFrame:
+    """Preprocesses the data for companies.
 
-#     Args:
-#         companies: Raw data.
-#     Returns:
-#         Preprocessed data, with `company_rating` converted to a float and
-#         `iata_approved` converted to boolean.
-#     """
-#     companies["iata_approved"] = _is_true(companies["iata_approved"])
-#     companies["company_rating"] = _parse_percentage(companies["company_rating"])
-#     return companies
+    Args:
+        companies: Raw data.
+    Returns:
+        Preprocessed data, with `company_rating` converted to a float and
+        `iata_approved` converted to boolean.
+        :param aug_train:
+    """
+    # companies["iata_approved"] = _is_true(companies["iata_approved"])
+    # companies["company_rating"] = _parse_percentage(companies["company_rating"])
+    return aug_train
 
 
 # def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
@@ -46,23 +47,19 @@ def _parse_money(x: pd.Series) -> pd.Series:
 #     return shuttles
 
 
-# def create_model_input_table(
-#     shuttles: pd.DataFrame, companies: pd.DataFrame, reviews: pd.DataFrame
-# ) -> pd.DataFrame:
-#     """Combines all data to create a model input table.
+def create_model_input_table(aug_train: pd.DataFrame) -> pd.DataFrame:
+    """Combines all data to create a model input table.
 
-#     Args:
-#         shuttles: Preprocessed data for shuttles.
-#         companies: Preprocessed data for companies.
-#         reviews: Raw data for reviews.
-#     Returns:
-#         Model input table.
+    Args:
+        aug_train: Preprocessed data for companies.
+    Returns:
+        Model input table.
 
-#     """
-#     rated_shuttles = shuttles.merge(reviews, left_on="id", right_on="shuttle_id")
-#     rated_shuttles = rated_shuttles.drop("id", axis=1)
-#     model_input_table = rated_shuttles.merge(
-#         companies, left_on="company_id", right_on="id"
-#     )
-#     model_input_table = model_input_table.dropna()
-#     return model_input_table
+    """
+    # rated_shuttles = shuttles.merge(reviews, left_on="id", right_on="shuttle_id")
+    # rated_shuttles = rated_shuttles.drop("id", axis=1)
+    # model_input_table = rated_shuttles.merge(
+    #     companies, left_on="company_id", right_on="id"
+    # )
+    # model_input_table = model_input_table.dropna()
+    return aug_train.dropna()
