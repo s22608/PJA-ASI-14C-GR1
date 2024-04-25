@@ -44,9 +44,9 @@ aug_train:
   filepath: data/01_raw/aug_train.csv
 
 
-preprocessed_aug_train:
+preprocess_aug_train:
   type: pandas.ParquetDataset
-  filepath: data/02_intermediate/preprocessed_aug_train.pq
+  filepath: data/02_intermediate/preprocess_aug_train.pq
 
 # preprocessed_shuttles:
 #   type: pandas.ParquetDataset
