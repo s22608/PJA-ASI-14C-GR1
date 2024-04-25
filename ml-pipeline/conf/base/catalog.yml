@@ -39,27 +39,18 @@
 # (transcoding), templating and a way to reuse arguments that are frequently repeated. See more here:
 # https://docs.kedro.org/en/stable/data/data_catalog.html
 
-companies:
+aug_train:
   type: pandas.CSVDataset
-  filepath: data/01_raw/companies.csv
+  filepath: data/01_raw/aug_train.csv
 
-reviews:
-  type: pandas.CSVDataset
-  filepath: data/01_raw/reviews.csv
 
-shuttles:
-  type: pandas.ExcelDataset
-  filepath: data/01_raw/shuttles.xlsx
-  load_args:
-    engine: openpyxl
-
-preprocessed_companies:
+preprocessed_aug_train:
   type: pandas.ParquetDataset
-  filepath: data/02_intermediate/preprocessed_companies.pq
+  filepath: data/02_intermediate/preprocessed_aug_train.pq
 
-preprocessed_shuttles:
-  type: pandas.ParquetDataset
-  filepath: data/02_intermediate/preprocessed_shuttles.pq
+# preprocessed_shuttles:
+#   type: pandas.ParquetDataset
+#   filepath: data/02_intermediate/preprocessed_shuttles.pq
 
 model_input_table:
   type: pandas.ParquetDataset

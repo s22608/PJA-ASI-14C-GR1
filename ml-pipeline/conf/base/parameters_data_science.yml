@@ -2,11 +2,17 @@ model_options:
   test_size: 0.2
   random_state: 3
   features:
-    - engines
-    - passenger_capacity
-    - crew
-    - d_check_complete
-    - moon_clearance_complete
-    - iata_approved
-    - company_rating
-    - review_scores_rating
+    - enrollee_id
+    - city
+    - city_development_index
+    - gender
+    - relevent_experience
+    - enrolled_university
+    - education_level
+    - major_discipline
+    - experience
+    - company_size
+    - company_type
+    - last_new_job
+    - training_hours
+    - target
