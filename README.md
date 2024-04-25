@@ -18,3 +18,5 @@ Nasz model uczenia maszynowego ma za zadanie przewidywać czy pracownik firmy zo
 3. conda create --name {environment name}
 4. conda install --file environment.yml
 5. pip freeze
+
+nowe środowisko zrobić, kedro run --starter =spaceflight
