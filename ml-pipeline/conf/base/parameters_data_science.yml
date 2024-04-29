@@ -3,16 +3,16 @@ model_options:
   random_state: 3
   features:
     - enrollee_id
-#    - city
+    - city
     - city_development_index
-#    - gender
-#    - relevent_experience
-#    - enrolled_university
-#    - education_level
-#    - major_discipline
-#    - experience
-#    - company_size
-#    - company_type
-#    - last_new_job
+    - gender
+    - relevent_experience
+    - enrolled_university
+    - education_level
+    - major_discipline
+    - experience
+    - company_size
+    - company_type
+    - last_new_job
     - training_hours
     - target
