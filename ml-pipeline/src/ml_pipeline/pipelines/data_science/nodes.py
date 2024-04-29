@@ -2,54 +2,40 @@ import logging
 from typing import Dict, Tuple
 
 import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.impute import SimpleImputer
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 
 
 def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
-    """Splits data into features and targets training and test sets.
+    imputer = SimpleImputer(strategy='most_frequent')
+    data_filled = pd.DataFrame(imputer.fit_transform(data), columns=data.columns)
 
-    Args:
-        data: Data containing features and target.
-        parameters: Parameters defined in parameters/data_science.yml.
-    Returns:
-        Split data.
-    """
-    X = data[parameters["features"]]
-    y = data["training_hours"]
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
-    )
+    label_encoders = {}
+    for column in data_filled.select_dtypes(include=['object']).columns:
+        le = LabelEncoder()
+        data_filled[column] = le.fit_transform(data_filled[column])
+        label_encoders[column] = le
+
+    X = data_filled.drop('target', axis=1)
+    y = data_filled['target']
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     return X_train, X_test, y_train, y_test
 
 
-def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LinearRegression:
-    """Trains the linear regression model.
-
-    Args:
-        X_train: Training data of independent features.
-        y_train: Training data for price.
-
-    Returns:
-        Trained model.
-    """
-    regressor = LinearRegression()
-    regressor.fit(X_train, y_train)
-    return regressor
+def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> RandomForestClassifier:
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    return model
 
 
 def evaluate_model(
-    regressor: LinearRegression, X_test: pd.DataFrame, y_test: pd.Series
+    model: RandomForestClassifier, X_test: pd.DataFrame, y_test: pd.Series
 ):
-    """Calculates and logs the coefficient of determination.
-
-    Args:
-        regressor: Trained model.
-        X_test: Testing data of independent features.
-        y_test: Testing data for price.
-    """
-    y_pred = regressor.predict(X_test)
-    score = r2_score(y_test, y_pred)
+    y_pred = model.predict(X_test)
     logger = logging.getLogger(__name__)
-    logger.info("Model has a coefficient R^2 of %.3f on test data.", score)
+    accuracy = accuracy_score(y_test, y_pred)
+    logger.info("Accuracy %s.", accuracy)
