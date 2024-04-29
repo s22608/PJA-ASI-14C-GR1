@@ -56,7 +56,7 @@ model_input_table:
   type: pandas.ParquetDataset
   filepath: data/03_primary/model_input_table.pq
 
-regressor:
+randomForestClassifier:
   type: pickle.PickleDataset
-  filepath: data/06_models/regressor.pickle
+  filepath: data/06_models/randomForestClassifier.pickle
   versioned: true

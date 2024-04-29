@@ -17,33 +17,8 @@ def _parse_money(x: pd.Series) -> pd.Series:
     return x
 
 
-# def preprocess_aug(companies: pd.DataFrame) -> pd.DataFrame:
-#     """Preprocesses the data for companies.
-
-#     Args:
-#         companies: Raw data.
-#     Returns:
-#         Preprocessed data, with `company_rating` converted to a float and
-#         `iata_approved` converted to boolean.
-#     """
-#     companies["iata_approved"] = _is_true(companies["iata_approved"])
-#     companies["company_rating"] = _parse_percentage(companies["company_rating"])
-#     return companies
-
-
-# def preprocess_shuttles(shuttles: pd.DataFrame) -> pd.DataFrame:
-#     """Preprocesses the data for shuttles.
-
-#     Args:
-#         shuttles: Raw data.
-#     Returns:
-#         Preprocessed data, with `price` converted to a float and `d_check_complete`,
-#         `moon_clearance_complete` converted to boolean.
-#     """
-#     shuttles["d_check_complete"] = _is_true(shuttles["d_check_complete"])
-#     shuttles["moon_clearance_complete"] = _is_true(shuttles["moon_clearance_complete"])
-#     shuttles["price"] = _parse_money(shuttles["price"])
-#     return shuttles
+def preprocess_aug_train(data: pd.DataFrame) -> pd.DataFrame:
+    return data
 
 
 # def create_model_input_table(

@@ -12,13 +12,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs="preprocess_aug_train",
                 name="preprocess_aug_train_node",
             ),
-            # ,
-            # node(
-            #     func=preprocess_shuttles,
-            #     inputs="shuttles",
-            #     outputs="preprocessed_shuttles",
-            #     name="preprocess_shuttles_node",
-            # ),
             node(
                 func=create_model_input_table,
                 inputs=["preprocess_aug_train"],
