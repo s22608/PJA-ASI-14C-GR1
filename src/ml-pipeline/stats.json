@@ -1,1 +1,1 @@
-{"model_input_table": {"rows": 8955, "columns": 14, "file_size": 169055}, "X_train": {"rows": 7164, "columns": 13}, "X_test": {"rows": 1791, "columns": 13}}
+{"aug_train": {"rows": 19158, "columns": 14, "file_size": 1961145}, "preprocess_aug_train": {"rows": 19158, "columns": 14, "file_size": 249503}, "model_input_table": {"rows": 19158, "columns": 14, "file_size": 249503}, "X_train": {"rows": 15326, "columns": 13}, "X_test": {"rows": 3832, "columns": 13}}
