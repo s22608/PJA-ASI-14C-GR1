@@ -1,6 +1,6 @@
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import create_model_input_table, preprocess_aug_train
+from .nodes import create_model_input_table, preprocess_aug_train, create_metrics
 
 
 def create_pipeline(**kwargs) -> Pipeline:
