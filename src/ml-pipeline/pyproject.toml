@@ -50,7 +50,7 @@ addopts = """
 fail_under = 0
 show_missing = true
 exclude_lines = ["pragma: no cover", "raise NotImplementedError"]
-
+INSTALLED_PLUGINS = ["kedro_mlflow"]
 [tool.ruff.format]
 docstring-code-format = true
 
