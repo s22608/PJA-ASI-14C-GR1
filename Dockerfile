@@ -8,12 +8,12 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Skopiuj plik requirements.txt i zainstaluj zależności
-COPY requirements.txt .
+COPY src/ml-pipeline/requirements.txt .
 RUN pip install -r requirements.txt
 RUN pip install toposort
 
 # Skopiuj cały projekt do katalogu roboczego
-COPY . .
+COPY src/ml-pipeline .
 
 # Ustawienie domyślnego polecenia do uruchomienia Kedro
 CMD ["kedro", "run"]
