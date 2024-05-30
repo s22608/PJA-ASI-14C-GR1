@@ -25,3 +25,16 @@ Nasz model uczenia maszynowego ma za zadanie przewidywać czy pracownik firmy zo
 2. kedro new --name=spaceflights
 3. kedro run --from-inputs aug_train
 4. kedro viz
+
+# Uruchomienie Kedro w Dockerze na Windows
+
+## 1. Zainstaluj Docker Desktop
+
+1. Pobierz Docker Desktop z oficjalnej strony [Docker](https://www.docker.com/products/docker-desktop).
+2. Zainstaluj Docker Desktop, postępując zgodnie z instrukcjami instalatora.
+3. Po zakończeniu instalacji uruchom Docker Desktop i upewnij się, że działa poprawnie.
+4. docker build -t docker-kedro-project .
+5. docker run --rm -it -v %cd%:/app docker-kedro-project
+6. EXPOSE 8888 5000
+7. docker run --rm -it -v %cd%:/app -e MY_ENV_VAR=value docker-kedro-project
+
